@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { setIsFinished } from "../redux/quizReducer";
+import { useDispatch, useSelector } from "react-redux";
+import { setIsFinished, setIndex } from "../redux/quizReducer";
 
 import { quizData } from "../global/questions";
 import Answers from "../components/Answers";
@@ -8,17 +8,17 @@ import NextButton from "../components/NextButton";
 import Question from "../components/Question";
 import Separator from "../components/Separator";
 import ProgressionBar from "../components/ProgressionBar";
+import { RootState } from "../redux/store";
 
 export default function QuizQuestions() {
   const dispatch = useDispatch();
-
-  const [index, setIndex] = useState<number>(0);
+  const index = useSelector((state: RootState) => state.quiz.index);
   const [hasClicked, setHasClicked] = useState<boolean>(true);
   const [progression, setProgression] = useState<number>(100 / quizData.length);
   const [answerIsClicked, setAnswerIsClicked] = useState<boolean>(false);
 
   function handleClick(): void {
-    setIndex(index + 1);
+    dispatch(setIndex);
     setHasClicked(!hasClicked);
     setProgression((progression) => progression + 100 / quizData.length);
     setAnswerIsClicked(!answerIsClicked);

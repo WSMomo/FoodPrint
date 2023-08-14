@@ -4,11 +4,13 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 export interface QuizReducerTypes {
   isStarted: boolean;
   isFinished: boolean;
+  index: number;
 }
 
 const initialState: QuizReducerTypes = {
   isStarted: false,
   isFinished: false,
+  index: 0,
 };
 
 export const quizSlice = createSlice({
@@ -21,9 +23,12 @@ export const quizSlice = createSlice({
     setIsFinished: (state, action: PayloadAction<boolean>) => {
       state.isFinished = action.payload;
     },
+    setIndex: (state) => {
+      state.index = state.index + 1;
+    },
   },
 });
 
-export const { setIsStarted, setIsFinished } = quizSlice.actions;
+export const { setIsStarted, setIsFinished, setIndex } = quizSlice.actions;
 
 export default quizSlice.reducer;
