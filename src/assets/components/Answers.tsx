@@ -1,4 +1,5 @@
 import { answerAndQuestions } from "../global/questions";
+
 import Answer from "./Answer";
 
 type Props = {

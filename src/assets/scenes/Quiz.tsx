@@ -1,8 +1,7 @@
 import { useSelector } from "react-redux";
-//components
+import { RootState } from "../redux/store";
 
 import Home from "./Home";
-import { RootState } from "../redux/store";
 import QuizQuestions from "./QuizQuestions";
 import Result from "./Result";
 

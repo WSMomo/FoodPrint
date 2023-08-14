@@ -1,12 +1,13 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setIsFinished } from "../redux/quizReducer";
+
+import { quizData } from "../global/questions";
 import Answers from "../components/Answers";
 import NextButton from "../components/NextButton";
 import Question from "../components/Question";
 import Separator from "../components/Separator";
-import { quizData } from "../global/questions";
-import { useState } from "react";
 import ProgressionBar from "../components/ProgressionBar";
-import { useDispatch } from "react-redux";
-import { setIsFinished } from "../redux/quizReducer";
 
 export default function QuizQuestions() {
   const dispatch = useDispatch();

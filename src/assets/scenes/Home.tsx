@@ -1,11 +1,9 @@
+import { useDispatch } from "react-redux";
+import { setIsStarted } from "../redux/quizReducer";
+
 import Accordion from "../components/Accordion";
 import ActionButton from "../components/ActionButton";
 import Separator from "../components/Separator";
-import { useDispatch } from "react-redux";
-import { setIsStarted } from "../redux/quizReducer";
-// type Props = {
-//   setIsStarted: (arg: boolean) => void;
-// };
 
 export default function Home() {
   const dispatch = useDispatch();
