@@ -2,7 +2,7 @@ import { resultsSentences } from "../global/results";
 import Separator from "../components/Separator";
 import ActionButton from "../components/ActionButton";
 import { useDispatch, useSelector } from "react-redux";
-import { handleRestart } from "../redux/quizReducer";
+import { restart } from "../redux/quizReducer";
 import { RootState } from "../redux/store";
 import { QUIZ_LENGTH } from "../global/data";
 
@@ -50,7 +50,7 @@ export default function Result() {
         </h2>
         <p className="text-lg">{resultsSentences[scoreResult].description}</p>
       </div>
-      <ActionButton handleClick={() => dispatch(handleRestart())}>
+      <ActionButton handleClick={() => dispatch(restart())}>
         Restart
       </ActionButton>
     </div>

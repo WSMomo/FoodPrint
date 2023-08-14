@@ -12,7 +12,7 @@ export default function Home() {
     <div className="bg-main-color text-secondary-color w-4/5 md:w-3/5 max-w-screen-md min-h-fit p-4 flex flex-col items-center">
       <h1 className="text-2xl">Welcome to the food quiz!</h1>
       <Separator />
-      <p className="text-left">
+      <p className="text-center">
         This quiz will help you learn more about food and its impact on the
         environment and people.
       </p>

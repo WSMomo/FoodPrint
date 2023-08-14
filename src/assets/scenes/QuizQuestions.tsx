@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { QUIZ_LENGTH } from "../global/data";
-import { setIsFinished, handleNextClick } from "../redux/quizReducer";
+import { setIsFinished, nextQuestion } from "../redux/quizReducer";
 
 import Answers from "../components/Answers";
 import NextButton from "../components/NextButton";
@@ -18,7 +18,7 @@ export default function QuizQuestions() {
 
   return (
     <>
-      <div className="bg-main-color text-secondary-color w-4/5 md:w-3/5 max-w-screen-md min-h-fit p-4 flex flex-col items-center">
+      <div className="bg-main-color text-secondary-color w-4/5 md:w-3/5 max-w-screen-md min-h-fit p-4 flex flex-col items-center justify-center">
         <ProgressionBar />
         <Question />
         <Separator />
@@ -35,7 +35,7 @@ export default function QuizQuestions() {
           ) : (
             <NextButton
               disabled={!answersClicked}
-              onClick={() => dispatch(handleNextClick())}
+              onClick={() => dispatch(nextQuestion())}
             >
               NEXT
             </NextButton>

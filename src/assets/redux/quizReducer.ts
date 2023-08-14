@@ -46,13 +46,13 @@ export const quizSlice = createSlice({
     addCorrectAnswerToScore: (state) => {
       state.score = state.score + 1;
     },
-    handleRestart: (state) => {
+    restart: (state) => {
       return { ...initialState, score: state.score };
     },
     setActuallyAnswer: (state) => {
       state.actuallyAnswered = !state.actuallyAnswered;
     },
-    handleNextClick: (state) => {
+    nextQuestion: (state) => {
       state.index = state.index + 1;
       state.progression = state.progression + progressionPercentage;
       state.actuallyAnswered = !state.actuallyAnswered;
@@ -68,9 +68,9 @@ export const {
   setProgression,
   setAnswersClicked,
   addCorrectAnswerToScore,
-  handleRestart,
+  restart,
   setActuallyAnswer,
-  handleNextClick,
+  nextQuestion,
 } = quizSlice.actions;
 
 export default quizSlice.reducer;
