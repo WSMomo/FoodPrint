@@ -2,7 +2,7 @@ import { resultsSentences } from "../global/results";
 import Separator from "../components/Separator";
 import ActionButton from "../components/ActionButton";
 import { useDispatch, useSelector } from "react-redux";
-import { setIsFinished, setIsStarted } from "../redux/quizReducer";
+import { handleRestart } from "../redux/quizReducer";
 import { RootState } from "../redux/store";
 import { QUIZ_LENGTH } from "../global/data";
 
@@ -38,11 +38,6 @@ export default function Result() {
 
   const dispatch = useDispatch();
 
-  function handleRestart() {
-    dispatch(setIsFinished(false));
-    dispatch(setIsStarted(false));
-  }
-
   return (
     <div className="bg-main-color text-secondary-color w-4/5 md:w-3/5 max-w-screen-md min-h-fit p-4 flex flex-col items-center">
       <div>
@@ -55,7 +50,9 @@ export default function Result() {
         </h2>
         <p className="text-lg">{resultsSentences[scoreResult].description}</p>
       </div>
-      <ActionButton handleClick={handleRestart}>Restart</ActionButton>
+      <ActionButton handleClick={() => dispatch(handleRestart())}>
+        Restart
+      </ActionButton>
     </div>
   );
 }
