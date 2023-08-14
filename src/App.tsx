@@ -1,19 +1,18 @@
-import Home from "./assets/scenes/Home";
+//redux
+import { Provider } from "react-redux";
 import Quiz from "./assets/scenes/Quiz";
-import { useState } from "react";
-import Result from "./assets/scenes/Result";
+import { store } from "./assets/redux/store";
+
+//components
+// import Result from "./assets/scenes/Result";
 
 function App() {
-  const [isStarted, setIsStarted] = useState(false);
-  const [isFinished, setIsFinished] = useState(false);
+  // const [isStarted, setIsStarted] = useState(false);
+  // const [isFinished, setIsFinished] = useState(false);
   return (
-    <div className="flex flex-col justify-center items-center h-screen bg-main-color">
-      {!isStarted && !isFinished && <Home setIsStarted={setIsStarted} />}
-      {isStarted && !isFinished && <Quiz setIsFinished={setIsFinished} />}
-      {isFinished && (
-        <Result setIsStarted={setIsStarted} setIsFinished={setIsFinished} />
-      )}
-    </div>
+    <Provider store={store}>
+      <Quiz />
+    </Provider>
   );
 }
 

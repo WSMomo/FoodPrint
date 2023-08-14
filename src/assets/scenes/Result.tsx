@@ -1,16 +1,14 @@
 import { resultsSentences } from "../global/results";
 import Separator from "../components/Separator";
 import ActionButton from "../components/ActionButton";
+import { useDispatch } from "react-redux";
+import { setIsFinished, setIsStarted } from "../redux/quizReducer";
 
-type Props = {
-  setIsFinished: (arg: boolean) => void;
-  setIsStarted: (arg: boolean) => void;
-};
-
-export default function Result({ setIsFinished, setIsStarted }: Props) {
+export default function Result() {
+  const dispatch = useDispatch();
   function handleRestart() {
-    setIsFinished(false);
-    setIsStarted(false);
+    dispatch(setIsFinished(false));
+    dispatch(setIsStarted(false));
   }
 
   return (

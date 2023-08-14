@@ -1,12 +1,15 @@
 import Accordion from "../components/Accordion";
 import ActionButton from "../components/ActionButton";
 import Separator from "../components/Separator";
+import { useDispatch } from "react-redux";
+import { setIsStarted } from "../redux/quizReducer";
+// type Props = {
+//   setIsStarted: (arg: boolean) => void;
+// };
 
-type Props = {
-  setIsStarted: (arg: boolean) => void;
-};
+export default function Home() {
+  const dispatch = useDispatch();
 
-export default function Home({ setIsStarted }: Props) {
   return (
     <div className="bg-main-color text-secondary-color w-4/5 md:w-3/5 max-w-screen-md min-h-fit p-4 flex flex-col items-center">
       <h1 className="text-2xl">Welcome to the food quiz!</h1>
@@ -19,7 +22,9 @@ export default function Home({ setIsStarted }: Props) {
         To get started, click the <span className="font-semibold">"Start"</span>{" "}
         button.
       </p>
-      <ActionButton handleClick={() => setIsStarted(true)}>Start</ActionButton>
+      <ActionButton handleClick={() => dispatch(setIsStarted(true))}>
+        Start
+      </ActionButton>
       <Separator />
       <Accordion title="How does the quiz work?">
         {" "}
