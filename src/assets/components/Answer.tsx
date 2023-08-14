@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 type Props = {
   children: React.ReactNode;
   setHasClicked: (arg: boolean) => void;
@@ -5,23 +7,29 @@ type Props = {
   setAnswerIsClicked: (arg: boolean) => void;
 };
 
+const answerClicked: string = "bg-secondary-color text-main-color";
+
 export default function Answer({
   setHasClicked,
-  children,
   answerIsClicked,
   setAnswerIsClicked,
+  children,
 }: Props) {
-  const answerClicked = "bg-secondary-color text-main-color";
-
+  const [isClicked, setIsClicked] = useState(false);
   function handleClick() {
     setAnswerIsClicked(true);
     setHasClicked(false);
+    setIsClicked(true);
   }
+
+  useEffect(() => {
+    setIsClicked(false);
+  }, []);
 
   return (
     <div
       className={`border-secondary-color border-[1px] p-2 m-2 cursor-pointer md:hover:opacity-70  ${
-        answerIsClicked && answerClicked
+        isClicked && answerIsClicked && answerClicked
       }`}
       onClick={handleClick}
     >
