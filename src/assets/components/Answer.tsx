@@ -2,18 +2,20 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setAnswersClicked } from "../redux/quizReducer";
 type Props = {
+  handleAnswerClick: () => void;
   children: React.ReactNode;
 };
 
 const answerClicked: string = "bg-secondary-color text-main-color";
 
-export default function Answer({ children }: Props) {
+export default function Answer({ handleAnswerClick, children }: Props) {
   const dispatch = useDispatch();
   const [isClicked, setIsClicked] = useState(false);
 
   function handleClick() {
     setIsClicked(true);
     dispatch(setAnswersClicked(true));
+    handleAnswerClick();
   }
 
   useEffect(() => {

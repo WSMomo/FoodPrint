@@ -10,6 +10,7 @@ export interface QuizReducerTypes {
   index: number;
   progression: number;
   answersClicked: boolean;
+  score: number;
 }
 
 const initialState: QuizReducerTypes = {
@@ -18,6 +19,7 @@ const initialState: QuizReducerTypes = {
   index: 0,
   progression: progressionPercentage,
   answersClicked: false,
+  score: 0,
 };
 
 export const quizSlice = createSlice({
@@ -39,6 +41,9 @@ export const quizSlice = createSlice({
     setAnswersClicked: (state, action: PayloadAction<boolean>) => {
       state.answersClicked = action.payload;
     },
+    addCorrectAnswerToScore: (state) => {
+      state.score = state.score + 1;
+    },
   },
 });
 
@@ -48,6 +53,7 @@ export const {
   setIndex,
   setProgression,
   setAnswersClicked,
+  addCorrectAnswerToScore,
 } = quizSlice.actions;
 
 export default quizSlice.reducer;
