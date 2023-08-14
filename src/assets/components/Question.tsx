@@ -1,10 +1,9 @@
-import { answerAndQuestions } from "../global/questions";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
+import { quizData } from "../global/questions";
 
-type Props = {
-  quizData: answerAndQuestions[];
-  index: number;
-};
+export default function Question() {
+  const index = useSelector((state: RootState) => state.quiz.index);
 
-export default function Question({ quizData, index }: Props) {
   return <div className="text-lg p-2 mt-4">{quizData[index].question}</div>;
 }

@@ -1,7 +1,7 @@
 export type answerAndQuestions = {
   question: string;
   options: string[];
-  answer: string;
+  answer: number;
 };
 
 export const quizData: answerAndQuestions[] = [
@@ -14,25 +14,25 @@ export const quizData: answerAndQuestions[] = [
       "Use of chemical fertilizers",
       "Food processing",
     ],
-    answer: "b",
+    answer: 1,
   },
   {
     question:
       "Which food requires the greatest amount of water for its production?",
     options: ["Rice", "Tomatoes", "Chicken", "Chocolate"],
-    answer: "a",
+    answer: 0,
   },
-  // {
-  //   question:
-  //     "Which of the following options has the least environmental impact?",
-  //   options: [
-  //     "Vegetarian diet",
-  //     "Meat-based diet",
-  //     "Vegan diet",
-  //     "Pescetarian diet",
-  //   ],
-  //   answer: "c",
-  // },
+  {
+    question:
+      "Which of the following options has the least environmental impact?",
+    options: [
+      "Vegetarian diet",
+      "Meat-based diet",
+      "Vegan diet",
+      "Pescetarian diet",
+    ],
+    answer: 2,
+  },
   // {
   //   question:
   //     "What is the primary cause of soil erosion in agricultural areas?",

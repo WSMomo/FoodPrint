@@ -1,53 +1,44 @@
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setIsFinished, setIndex } from "../redux/quizReducer";
+import { RootState } from "../redux/store";
+import { QUIZ_LENGTH } from "../global/data";
+import { setIsFinished, setIndex, setProgression } from "../redux/quizReducer";
 
-import { quizData } from "../global/questions";
 import Answers from "../components/Answers";
 import NextButton from "../components/NextButton";
 import Question from "../components/Question";
 import Separator from "../components/Separator";
 import ProgressionBar from "../components/ProgressionBar";
-import { RootState } from "../redux/store";
 
 export default function QuizQuestions() {
   const dispatch = useDispatch();
   const index = useSelector((state: RootState) => state.quiz.index);
-  const [hasClicked, setHasClicked] = useState<boolean>(true);
-  const [progression, setProgression] = useState<number>(100 / quizData.length);
-  const [answerIsClicked, setAnswerIsClicked] = useState<boolean>(false);
+  const answersClicked = useSelector(
+    (state: RootState) => state.quiz.answersClicked
+  );
 
-  function handleClick(): void {
-    dispatch(setIndex);
-    setHasClicked(!hasClicked);
-    setProgression((progression) => progression + 100 / quizData.length);
-    setAnswerIsClicked(!answerIsClicked);
+  function handleNextClick(): void {
+    dispatch(setIndex());
+    dispatch(setProgression());
   }
 
   return (
     <>
       <div className="bg-main-color text-secondary-color w-4/5 md:w-3/5 max-w-screen-md min-h-fit p-4 flex flex-col items-center">
-        <ProgressionBar progression={progression} />
-        <Question quizData={quizData} index={index} />
+        <ProgressionBar />
+        <Question />
         <Separator />
-        <Answers
-          quizData={quizData}
-          index={index}
-          setHasClicked={setHasClicked}
-          answerIsClicked={answerIsClicked}
-          setAnswerIsClicked={setAnswerIsClicked}
-        />
+        <Answers />
         <Separator />
         <div className="flex justify-end w-2/4">
-          {index === quizData.length - 1 ? (
+          {index === QUIZ_LENGTH - 1 ? (
             <NextButton
-              disabled={hasClicked}
+              disabled={!answersClicked}
               onClick={() => dispatch(setIsFinished(true))}
             >
               END
             </NextButton>
           ) : (
-            <NextButton disabled={hasClicked} onClick={handleClick}>
+            <NextButton disabled={!answersClicked} onClick={handleNextClick}>
               NEXT
             </NextButton>
           )}
