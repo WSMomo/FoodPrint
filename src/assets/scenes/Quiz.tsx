@@ -1,10 +1,10 @@
-import Answers from "./Answers";
-import Button from "./Button";
-import Question from "./Question";
-import Separator from "./Separator";
+import Answers from "../components/Answers";
+import NextButton from "../components/NextButton";
+import Question from "../components/Question";
+import Separator from "../components/Separator";
 import { quizData } from "../global/questions";
 import { useState } from "react";
-import ProgressionBar from "./ProgressionBar";
+import ProgressionBar from "../components/ProgressionBar";
 
 type Props = {
   setIsFinished: (arg: boolean) => void;
@@ -39,13 +39,16 @@ export default function Quiz({ setIsFinished }: Props) {
         <Separator />
         <div className="flex justify-end w-2/4">
           {index === quizData.length - 1 ? (
-            <Button disabled={hasClicked} onClick={() => setIsFinished(true)}>
+            <NextButton
+              disabled={hasClicked}
+              onClick={() => setIsFinished(true)}
+            >
               END
-            </Button>
+            </NextButton>
           ) : (
-            <Button disabled={hasClicked} onClick={handleClick}>
+            <NextButton disabled={hasClicked} onClick={handleClick}>
               NEXT
-            </Button>
+            </NextButton>
           )}
         </div>
       </div>

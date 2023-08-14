@@ -1,5 +1,6 @@
-import Accordion from "./Accordion";
-import Separator from "./Separator";
+import Accordion from "../components/Accordion";
+import ActionButton from "../components/ActionButton";
+import Separator from "../components/Separator";
 
 type Props = {
   setIsStarted: (arg: boolean) => void;
@@ -18,12 +19,7 @@ export default function Home({ setIsStarted }: Props) {
         To get started, click the <span className="font-semibold">"Start"</span>{" "}
         button.
       </p>
-      <button
-        className="border px-8 py-2 md:hover:opacity-75 m-4"
-        onClick={() => setIsStarted(true)}
-      >
-        Start
-      </button>
+      <ActionButton handleClick={() => setIsStarted(true)}>Start</ActionButton>
       <Separator />
       <Accordion title="How does the quiz work?">
         {" "}
