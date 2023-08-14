@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 type Props = {
   children: React.ReactNode;
   setHasClicked: (arg: boolean) => void;
@@ -22,7 +20,7 @@ export default function Answer({
 
   return (
     <div
-      className={`border-secondary-color border-[1px] p-2 m-2 cursor-pointer ${
+      className={`border-secondary-color border-[1px] p-2 m-2 cursor-pointer md:hover:opacity-70  ${
         answerIsClicked && answerClicked
       }`}
       onClick={handleClick}

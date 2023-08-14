@@ -17,7 +17,7 @@ export default function Answers({
   setAnswerIsClicked,
 }: Props) {
   return (
-    <div className="w-2/3">
+    <div className="w-5/6 md:w-2/3">
       <Answer
         setHasClicked={setHasClicked}
         answerIsClicked={answerIsClicked}
