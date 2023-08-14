@@ -1,21 +1,25 @@
 import Answers from "./Answers";
-import NextButton from "./NextButton";
+import Button from "./Button";
 import Question from "./Question";
 import Separator from "./Separator";
 import { quizData } from "../global/questions";
 import { useState } from "react";
 import ProgressionBar from "./ProgressionBar";
 
-export default function Quiz() {
+type Props = {
+  setIsFinished: (arg: boolean) => void;
+};
+
+export default function Quiz({ setIsFinished }: Props) {
   const [index, setIndex] = useState<number>(0);
   const [hasClicked, setHasClicked] = useState<boolean>(true);
-  const [progression, setProgression] = useState<number>(5);
+  const [progression, setProgression] = useState<number>(100 / quizData.length);
   const [answerIsClicked, setAnswerIsClicked] = useState<boolean>(false);
 
   function handleClick(): void {
     setIndex(index + 1);
     setHasClicked(!hasClicked);
-    setProgression((progression) => progression + 5);
+    setProgression((progression) => progression + 100 / quizData.length);
     setAnswerIsClicked(!answerIsClicked);
   }
 
@@ -34,7 +38,15 @@ export default function Quiz() {
         />
         <Separator />
         <div className="flex justify-end w-2/4">
-          <NextButton disabled={hasClicked} onClick={handleClick} />
+          {index === quizData.length - 1 ? (
+            <Button disabled={hasClicked} onClick={() => setIsFinished(true)}>
+              END
+            </Button>
+          ) : (
+            <Button disabled={hasClicked} onClick={handleClick}>
+              NEXT
+            </Button>
+          )}
         </div>
       </div>
     </>
