@@ -1,12 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { QUIZ_LENGTH } from "../global/data";
-import {
-  setIsFinished,
-  setIndex,
-  setProgression,
-  setActuallyAnswer,
-} from "../redux/quizReducer";
+import { setIsFinished, handleNextClick } from "../redux/quizReducer";
 
 import Answers from "../components/Answers";
 import NextButton from "../components/NextButton";
@@ -20,12 +15,6 @@ export default function QuizQuestions() {
   const answersClicked = useSelector(
     (state: RootState) => state.quiz.answersClicked
   );
-
-  function handleNextClick(): void {
-    dispatch(setIndex());
-    dispatch(setProgression());
-    dispatch(setActuallyAnswer());
-  }
 
   return (
     <>
@@ -44,7 +33,10 @@ export default function QuizQuestions() {
               END
             </NextButton>
           ) : (
-            <NextButton disabled={!answersClicked} onClick={handleNextClick}>
+            <NextButton
+              disabled={!answersClicked}
+              onClick={() => dispatch(handleNextClick())}
+            >
               NEXT
             </NextButton>
           )}

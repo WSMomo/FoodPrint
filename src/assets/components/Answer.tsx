@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setAnswersClicked, setActuallyAnswer } from "../redux/quizReducer";
 import { RootState } from "../redux/store";
@@ -7,14 +7,17 @@ type Props = {
   children: React.ReactNode;
 };
 
-const answerClicked: string = "bg-secondary-color text-main-color";
+const answerClickedStyle: string = "bg-secondary-color text-main-color";
 
 export default function Answer({ handleAnswerClick, children }: Props) {
   const dispatch = useDispatch();
-  const [isClicked, setIsClicked] = useState(false);
+  const answersClicked = useSelector(
+    (state: RootState) => state.quiz.answersClicked
+  );
   const actuallyAnswered = useSelector(
     (state: RootState) => state.quiz.actuallyAnswered
   );
+  const [isClicked, setIsClicked] = useState(false);
   function handleClick() {
     if (!actuallyAnswered) {
       setIsClicked(true);
@@ -24,14 +27,10 @@ export default function Answer({ handleAnswerClick, children }: Props) {
     }
   }
 
-  useEffect(() => {
-    setIsClicked(false);
-  }, []);
-
   return (
     <div
       className={`border-secondary-color border-[1px] p-2 m-2 ${
-        isClicked && answerClicked
+        isClicked && answersClicked && answerClickedStyle
       } ${!actuallyAnswered && "cursor-pointer md:hover:opacity-70"}`}
       onClick={handleClick}
     >
