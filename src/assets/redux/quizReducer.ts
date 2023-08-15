@@ -15,6 +15,7 @@ export type QuizReducerTypes = {
   attempt: number;
   currentUserAnswer: number | null;
   currentCorrectAnswer: number | null;
+  wrongAnswers: number[];
 };
 
 const initialState: QuizReducerTypes = {
@@ -28,6 +29,7 @@ const initialState: QuizReducerTypes = {
   answersClicked: false,
   currentUserAnswer: null,
   currentCorrectAnswer: null,
+  wrongAnswers: [],
 };
 
 export const quizSlice = createSlice({
@@ -56,7 +58,7 @@ export const quizSlice = createSlice({
       state.isFinished = action.payload;
       state.currentCorrectAnswer === state.currentUserAnswer
         ? (state.score += 1)
-        : state.score;
+        : state.wrongAnswers.push(state.index);
     },
     restart: (state) => {
       return {
@@ -68,7 +70,7 @@ export const quizSlice = createSlice({
     nextQuestion: (state) => {
       state.currentCorrectAnswer === state.currentUserAnswer
         ? (state.score += 1)
-        : state.score;
+        : state.wrongAnswers.push(state.index);
       state.index = state.index + 1;
       state.progression = state.progression + progressionPercentage;
       state.answersClicked = !state.answersClicked;

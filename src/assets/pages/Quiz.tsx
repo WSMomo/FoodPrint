@@ -4,7 +4,6 @@ import { RootState } from "../redux/store";
 import QuizQuestions from "./QuizQuestions";
 import Result from "./Result";
 import Home from "./Home";
-// import Loader from "../components/Loader";
 
 export default function Quiz() {
   const isStarted = useSelector((state: RootState) => state.quiz.isStarted);
@@ -14,7 +13,6 @@ export default function Quiz() {
       {!isStarted && !isFinished && <Home />}
       {isStarted && !isFinished && <QuizQuestions />}
       {isFinished && <Result />}
-      {/* <Loader /> */}
     </div>
   );
 }
