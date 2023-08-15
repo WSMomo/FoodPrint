@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
+
 import { QUIZ_LENGTH } from "../global/data";
 
 export default function ProgressionBar() {

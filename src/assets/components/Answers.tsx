@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import Answer from "./Answer";
 import { RootState } from "../redux/store";
 import { getQuizData } from "../global/questions";
 import {
@@ -8,13 +7,17 @@ import {
   setCurrentUserAnswer,
 } from "../redux/quizReducer";
 
+import Answer from "./Answer";
+
 export default function Answers() {
   const dispatch = useDispatch();
-  const index = useSelector((state: RootState) => state.quiz.index);
+  const index = useSelector((state: RootState) => state.quiz.index); // current index
 
+  // LANGUAGE
   const language = useSelector((state: RootState) => state.quiz.language);
   const quizData = getQuizData(language);
 
+  // update current correct answer when index changes
   useEffect(() => {
     dispatch(setCurrentCorrectAnswer(quizData[index].answer));
     // eslint-disable-next-line react-hooks/exhaustive-deps

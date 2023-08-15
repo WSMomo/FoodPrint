@@ -1,10 +1,11 @@
 import { useSelector } from "react-redux";
+
 import { RootState } from "../redux/store";
 
 import QuizQuestions from "./QuizQuestions";
-import Result from "./Result";
 import Home from "./Home";
 import Languages from "./Languages";
+import Result from "./Result";
 
 export default function Quiz() {
   const isStarted = useSelector((state: RootState) => state.quiz.isStarted);

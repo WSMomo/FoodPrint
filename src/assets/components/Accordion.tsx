@@ -21,12 +21,14 @@ export default function Accordion({ title, children }: Props) {
         : "border border-secondary-color"
     }`}
     >
+      {/* ACCORDION TITLE */}
       <h2
         onClick={handleClick}
         className="font-semibold m-2 cursor-pointer text-center"
       >
         {title}
       </h2>
+      {/* ACCORDION DESCRIPTION */}
       <p className={`${isHidden ? "hidden" : ""} p-2`}>{children}</p>
     </div>
   );

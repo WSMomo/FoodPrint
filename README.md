@@ -192,6 +192,37 @@ To get a local copy up and running follow these simple example steps.
     <div>For using i18n, I've created three files per language (Italian and English).
   <br>
   One file contains all the static parts of the website, another file for questions and answers, and a third file for the final test results including images and skills.</div>
+  <br>
+  <div><b>Change language component:</b></div>
+  <br>
+<code>
+<samp>
+export default function Languages() {
+const dispatch = useDispatch();
+
+function handleLanguageChange(language: string) {
+i18n.changeLanguage(language);
+dispatch(setLanguage(language));
+}
+
+return (
+
+<div className="flex flex-col gap-12 w-1/6 md:w-1/3 md:flex-row xl:w-1/6 justify-center items-center">
+<div
+className="cursor-pointer"
+onClick={() => handleLanguageChange("en")} >
+<img src="./public/img/languages/english.png" alt="English"   style="width: 24px" />
+</div>
+<div
+className="cursor-pointer"
+onClick={() => handleLanguageChange("it")} >
+<img src="./public/img/languages/italy.png" alt="Italian" style="width: 24px" />
+</div>
+</div>
+);
+}
+</samp>
+</code>
 <br>
 
 ## License
