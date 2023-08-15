@@ -12,16 +12,16 @@
   "aware": {
     "sentence": "Consapevole",
     "description": "Ottimo lavoro! Hai dimostrato una buona conoscenza. Continua ad esplorare il legame tra il cibo e l'ambiente per migliorare ulteriormente.",
-    "image": "/assets/img/tree_aware.png"
+    "image": "/img/tree_aware.png"
   },
   "expert": {
     "sentence": "Esperto",
     "description": "Ben fatto! Hai dimostrato una conoscenza approfondita sull'argomento. Continua così e diventerai un vero maestro del cibo sostenibile!",
-    "image": "/assets/img/vegetables_expert.png"
+    "image": "/img/vegetables_expert.png"
   },
   "master": {
     "sentence": "Maestro",
     "description": "Straordinario! Hai ottenuto il punteggio più alto e ti sei dimostrato un vero maestro del cibo e dell'ambiente. Continua a diffondere consapevolezza e impegno per un futuro più sostenibile.",
-    "image": "/assets/img/earth_master.png"
+    "image": "/img/earth_master.png"
   }
 }
