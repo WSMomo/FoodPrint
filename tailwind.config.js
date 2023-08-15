@@ -6,6 +6,8 @@ export default {
       colors: {
         "main-color": "#1b212c",
         "secondary-color": "#d7d1c6",
+        // "secondary-color": "#1b212c",
+        // "main-color": "#d7d1c6",
       },
     },
   },

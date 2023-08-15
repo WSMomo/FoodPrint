@@ -16,12 +16,11 @@ export default function Hero() {
   const { t } = useTranslation();
   const language = useSelector((state: RootState) => state.quiz.language);
   const resultsSentences: resultsSentencesType = getResultsData(language);
-  const dispatch = useDispatch();
 
+  const dispatch = useDispatch();
   const highestScore = useSelector(
     (state: RootState) => state.quiz.highestScore
   );
-
   const attempt = useSelector((state: RootState) => state.quiz.attempt);
   const scoreResult = checkScoreResult(highestScore);
   const titleByScore = resultsSentences[scoreResult].sentence;
