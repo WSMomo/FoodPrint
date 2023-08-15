@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { QUIZ_LENGTH } from "../global/data";
 import NextButton from "./NextButton";
-import { nextQuestion, setIsFinished } from "../redux/quizReducer";
+import { nextQuestion, showResults } from "../redux/quizReducer";
 export default function NextOrEndButtons() {
   const dispatch = useDispatch();
   const index = useSelector((state: RootState) => state.quiz.index);
@@ -14,7 +14,7 @@ export default function NextOrEndButtons() {
       {index === QUIZ_LENGTH - 1 ? (
         <NextButton
           disabled={!answersClicked}
-          onClick={() => dispatch(setIsFinished(true))}
+          onClick={() => dispatch(showResults(true))}
         >
           END
         </NextButton>

@@ -21,11 +21,11 @@ const initialState: QuizReducerTypes = {
   isStarted: false,
   isFinished: false,
   index: 0,
-  progression: progressionPercentage,
-  answersClicked: false,
   score: 0,
   highestScore: 0,
   attempt: 0,
+  progression: progressionPercentage,
+  answersClicked: false,
   currentUserAnswer: null,
   currentCorrectAnswer: null,
 };
@@ -51,6 +51,12 @@ export const quizSlice = createSlice({
     },
     addCorrectAnswerToScore: (state) => {
       state.score = state.score + 1;
+    },
+    showResults: (state, action: PayloadAction<boolean>) => {
+      state.isFinished = action.payload;
+      state.currentCorrectAnswer === state.currentUserAnswer
+        ? (state.score += 1)
+        : state.score;
     },
     restart: (state) => {
       return {
@@ -93,6 +99,7 @@ export const {
   startQuiz,
   setCurrentUserAnswer,
   setCurrentCorrectAnswer,
+  showResults,
 } = quizSlice.actions;
 
 export default quizSlice.reducer;

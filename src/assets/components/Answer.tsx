@@ -27,9 +27,12 @@ export default function Answer({
 
   return (
     <div
-      className={`border-secondary-color border-[1px] p-2 m-2 cursor-pointer md:hover:opacity-70 ${
+      className={`border-secondary-color border-[1px] p-2 m-2 ${
         userAnswer === index && answerClickedStyle
-      } `}
+      } ${
+        userAnswer != index &&
+        "cursor-pointer md:hover:opacity-70 transition-all duration-75"
+      }  `}
       onClick={handleClick}
     >
       {children}

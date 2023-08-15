@@ -1,12 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
 import { startQuiz } from "../redux/quizReducer";
-import ActionButton from "../components/ActionButton";
-import Separator from "../components/Separator";
-import HomePageImage from "../components/HomePageImage";
 import { RootState } from "../redux/store";
-import Accordion from "../components/Accordion";
+
 import { resultsSentences } from "../global/results";
 import { checkScoreResult } from "../global/utility";
+import { QUIZ_LENGTH } from "../global/data";
+
+import ActionButton from "./ActionButton";
+import Accordion from "./Accordion";
+import HomePageImage from "./HomePageImage";
+import Separator from "./Separator";
 
 export default function Hero() {
   const dispatch = useDispatch();
@@ -25,7 +28,12 @@ export default function Hero() {
       <h1 className="text-3xl">FoodPrint: The Sustainability Quiz </h1>
       <HomePageImage />
       {attempt > 0 ? (
-        <Accordion title={titleByScore}>{descriptionByScore}</Accordion>
+        <Accordion title={titleByScore}>
+          <div>
+            {highestScore}/{QUIZ_LENGTH}
+          </div>
+          <div>{descriptionByScore}</div>
+        </Accordion>
       ) : (
         ""
       )}

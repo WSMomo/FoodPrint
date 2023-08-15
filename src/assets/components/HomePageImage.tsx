@@ -14,5 +14,5 @@ export default function HomePageImage() {
   const imageByScore = resultsSentences[scoreResult].image;
   const homeImage = attempt > 0 ? imageByScore : FarmPic;
 
-  return <img className="w-1/5 m-4" src={homeImage} alt="Food Quiz" />;
+  return <img className="w-24 md:w-40 m-4" src={homeImage} alt="Food Quiz" />;
 }
