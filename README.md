@@ -66,7 +66,7 @@
 <ul style="list-style-type: none;">
     <li>
       <h6>Select the Language</h6>
-      <img src="/public/img/readme/languages.png">
+      <img src="/public/img/readme/languages.png" alt="languages">
     </li>
     <li>
       <h6>Navigate the Home</h6>
@@ -74,7 +74,7 @@
         <li>Start the quiz with the "Learn More..." button</li>
         <li>Learn more about the app using the accordion buttons</li>
       </ul>
-      <img src="/public/img/readme/home.png">
+      <img src="/public/img/readme/home.png" alt="home">
     </li>
     <li>
       <h6>Take the Quiz</h6>
@@ -82,7 +82,7 @@
         <li>Answer the questions</li>
         <li>If you rethink your answer, you can change it before clicking the "Next" button</li>
       </ul>
-      <img src="/public/img/readme/quiz.png">
+      <img src="/public/img/readme/quiz.png" alt="quiz">
     </li>
     <li>
       <h6>View the Results</h6>
@@ -91,13 +91,13 @@
         <li>Return to the home page and retake the quiz using the "Restart" button</li>
         <li>If you made some errors, watch the questions you answered incorrectly</li>
       </ul>
-      <img src="/public/img/readme/result.png">
+      <img src="/public/img/readme/result.png" alt="result">
     </li>
     <li>
       <h6>Return to the Home Page</h6>
       <div>After your first attempt, you can view your high score and a summary of your skills directly on the home page
       </div>
-      <img src="/public/img/readme/skillsHome.png">
+      <img src="/public/img/readme/skillsHome.png" alt="skillsHome">
     </li>
   </ul>
 
@@ -193,7 +193,7 @@
   <br>
   <div><b>Change language component:</b></div>
   <br>
-<img src="./public/img/readme/languagesComponent.png">
+<img src="./public/img/readme/languagesComponent.png" alt="languagesComponent">
 </code>
 <br>
 
