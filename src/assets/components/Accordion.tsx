@@ -29,7 +29,7 @@ export default function Accordion({ title, children }: Props) {
         {title}
       </h2>
       {/* ACCORDION DESCRIPTION */}
-      <p className={`${isHidden ? "hidden" : ""} p-2`}>{children}</p>
+      <div className={`${isHidden ? "hidden" : ""} p-2`}>{children}</div>
     </div>
   );
 }

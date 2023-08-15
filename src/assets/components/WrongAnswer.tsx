@@ -23,15 +23,17 @@ export default function WrongAnswer({ questionNumber }: Props) {
   const correctAnswer = answers[correctAnswerIndex];
 
   return (
-    <ul className="text-center">
+    <div>
       <Separator />
-      <li>
-        <div>{question}</div>
-        <div className="m-2">
-          {t("correctAnswer")}
-          <span className="font-semibold"> {correctAnswer}</span>
-        </div>
-      </li>
-    </ul>
+      <ul className="text-center">
+        <li>
+          <div>{question}</div>
+          <div className="m-2">
+            {t("correctAnswer")}
+            <span className="font-semibold"> {correctAnswer}</span>
+          </div>
+        </li>
+      </ul>
+    </div>
   );
 }
