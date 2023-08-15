@@ -5,18 +5,18 @@
 <h3 align="center">FoodPrint</h3>
 
   <p align="center">
-    This quiz will help you learn more about food and its impact on the environment and people.
+    Welcome to FoodPrint, a quiz web app designed to raise awareness about food and its impact on the environment and people.
+    <br />
+    Are you up for the challenge? Test your knowledge and learn about sustainable food choices.
     <br />
     <a href="https://food-print.vercel.app/"><strong>View Demo</strong></a>
     <br />
   </p>
 </div>
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#built-with">Built With</a></li>
     <li><a href="#getting-started">Getting Started</a></li>
     <li><a href="#installation">Installation</a></li>
@@ -26,14 +26,6 @@
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
-
-<!-- ABOUT THE PROJECT -->
-
-## About The Project
-
-<img src="/public/img/readme/home.png">
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
 ### Built With
 
@@ -119,6 +111,8 @@ To get a local copy up and running follow these simple example steps.
 
   <div>
     <h6>React</h6>
+    <div>Chosen to create dynamic and engaging interfaces thanks to its component-based structure and virtual DOM.</div>
+    <br>
     <div><strong>Main Pages and Related Components</strong></div>
     <ul>
       <li>
@@ -168,6 +162,8 @@ To get a local copy up and running follow these simple example steps.
   </div>
 
   <h6>Redux</h6>
+    <div>Used to manage the global state of the application in a consistent and predictable manner.</div>
+    <br>
   <ul>
     <li><b>setLanguage:</b> Set the selected language for the quiz and mark that languages have been selected.</li>
     <li><b>setIsStarted:</b> Set the quiz state to indicate whether it has started or not.</li>
@@ -186,8 +182,17 @@ To get a local copy up and running follow these simple example steps.
   </ul>
 
   <h6>Typescript</h6>
-
+    <div>Added to enhance code safety through static typing and error detection during development.</div>
+    <br>
+  <h6>TailwindCSS</h6>
+    <div>Adopted to style the application quickly and efficiently, using pre-defined HTML classes.</div>
+    <br>
   <h6>i18n</h6>
+    <div>Integrated to support multilingualism, allowing users to select their preferred language and making the application accessible to a wide audience.</div>
+    <div>For using i18n, I've created three files per language (Italian and English).
+  <br>
+  One file contains all the static parts of the website, another file for questions and answers, and a third file for the final test results including images and skills.</div>
+<br>
 
 ## License
 
