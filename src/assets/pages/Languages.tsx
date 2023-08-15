@@ -1,5 +1,3 @@
-import Italian from "../../../public/img/languages/italy.png";
-import English from "../../../public/img/languages/english.png";
 import { useDispatch } from "react-redux";
 import { setLanguage } from "../redux/quizReducer";
 import i18n from "../../i18n";
@@ -18,13 +16,13 @@ export default function Languages() {
         className="cursor-pointer"
         onClick={() => handleLanguageChange("en")}
       >
-        <img src={English} alt="English" />
+        <img src="/img/languages/english.png" alt="English" />
       </div>
       <div
         className="cursor-pointer"
         onClick={() => handleLanguageChange("it")}
       >
-        <img src={Italian} alt="Italian" />
+        <img src="/img/languages/italy.png" alt="Italian" />
       </div>
     </div>
   );
