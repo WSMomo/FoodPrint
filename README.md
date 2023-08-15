@@ -152,10 +152,14 @@ To get a local copy up and running follow these simple example steps.
       <li>
         <div>Result</div>
         <ul>
+          <li>ResultRender</li>
           <li>Separator</li>
           <li>ActionButton</li>
           <li>Accordion</li>
-          <li>WrongAnswers</li>
+          <li>
+          <div>WrongAnswerRender</div>
+            <ul><li>WrongAnswer</li></ul>
+          </li>
         </ul>
       </li>
     </ul>
