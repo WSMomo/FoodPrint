@@ -22,7 +22,7 @@ export type QuizReducerTypes = {
 
 const initialState: QuizReducerTypes = {
   language: "en",
-  languagesSelected: true,
+  languagesSelected: false,
   isStarted: false,
   isFinished: false,
   index: 0,
