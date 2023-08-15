@@ -11,9 +11,10 @@ export type QuizReducerTypes = {
   progression: number;
   answersClicked: boolean;
   score: number;
-  actuallyAnswered: boolean;
   highestScore: number;
   attempt: number;
+  currentUserAnswer: number | null;
+  currentCorrectAnswer: number | null;
 };
 
 const initialState: QuizReducerTypes = {
@@ -23,9 +24,10 @@ const initialState: QuizReducerTypes = {
   progression: progressionPercentage,
   answersClicked: false,
   score: 0,
-  actuallyAnswered: false,
   highestScore: 0,
   attempt: 0,
+  currentUserAnswer: null,
+  currentCorrectAnswer: null,
 };
 
 export const quizSlice = createSlice({
@@ -57,18 +59,24 @@ export const quizSlice = createSlice({
         highestScore: state.score,
       };
     },
-    setActuallyAnswer: (state) => {
-      state.actuallyAnswered = !state.actuallyAnswered;
-    },
     nextQuestion: (state) => {
+      state.currentCorrectAnswer === state.currentUserAnswer
+        ? (state.score += 1)
+        : state.score;
       state.index = state.index + 1;
       state.progression = state.progression + progressionPercentage;
-      state.actuallyAnswered = !state.actuallyAnswered;
       state.answersClicked = !state.answersClicked;
+      state.currentUserAnswer = null;
     },
     startQuiz: (state) => {
       state.isStarted = true;
       state.attempt = state.attempt + 1;
+    },
+    setCurrentUserAnswer: (state, action: PayloadAction<number>) => {
+      state.currentUserAnswer = action.payload;
+    },
+    setCurrentCorrectAnswer: (state, action: PayloadAction<number>) => {
+      state.currentCorrectAnswer = action.payload;
     },
   },
 });
@@ -81,9 +89,10 @@ export const {
   setAnswersClicked,
   addCorrectAnswerToScore,
   restart,
-  setActuallyAnswer,
   nextQuestion,
   startQuiz,
+  setCurrentUserAnswer,
+  setCurrentCorrectAnswer,
 } = quizSlice.actions;
 
 export default quizSlice.reducer;
