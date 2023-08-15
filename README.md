@@ -18,7 +18,6 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#built-with">Built With</a></li>
-    <li><a href="#getting-started">Getting Started</a></li>
     <li><a href="#installation">Installation</a></li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#technical-choices">Technical Choices</a></li>
@@ -46,11 +45,6 @@
 </li>
 </ul>
 
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Installation
 
 1. Clone the repo
@@ -62,7 +56,7 @@ To get a local copy up and running follow these simple example steps.
    npm install
    ```
 3. Run
-   ```js
+   ```sh
    npm run dev
    ```
 4. Press "o" or click the link in the terminal.
