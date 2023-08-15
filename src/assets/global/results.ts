@@ -1,9 +1,3 @@
-// import SeedInitiator from "../img/seed_initiator.png";
-// import FruitsStarter from "../img/fruits_starter.png";
-// import TreeAware from "../img/tree_aware.png";
-// import VegetablesExpert from "../img/vegetables_expert.png";
-// import EarthMaster from "../img/earth_master.png";
-
 import enResultsInfo from "../translations/result_en.json";
 import itResultsInfo from "../translations/result_it.json";
 
@@ -15,7 +9,7 @@ export type resultsSentencesType = {
   };
 };
 
-export function getResultsData(language: string) {
+export function getResultsData(language: string): resultsSentencesType {
   switch (language) {
     case "en":
       return enResultsInfo;

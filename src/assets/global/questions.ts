@@ -7,7 +7,7 @@ export type answerAndQuestions = {
   answer: number;
 };
 
-export function getQuizData(language: string) {
+export function getQuizData(language: string): answerAndQuestions[] {
   switch (language) {
     case "en":
       return enQuizData;
