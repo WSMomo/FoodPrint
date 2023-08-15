@@ -2,12 +2,12 @@
   "initiator": {
     "sentence": "Neofita",
     "description": "Ogni viaggio inizia con un passo. La tua curiosità sull'impatto del cibo sull'ambiente è un ottimo punto di partenza. Continua ad esplorare e imparare!",
-    "image": "/assets/img/seed_initiator.png"
+    "image": "/img/seed_initiator.png"
   },
   "starter": {
     "sentence": "Principiante",
     "description": "Stai appena iniziando il tuo viaggio per capire l'impatto del cibo sull'ambiente. Continua ad imparare ed esplorare!",
-    "image": "/assets/img/fruits_starter.png"
+    "image": "/img/fruits_starter.png"
   },
   "aware": {
     "sentence": "Consapevole",
