@@ -1,5 +1,5 @@
-import Italian from "../img/languages/italy.png";
-import English from "../img/languages/english.png";
+import Italian from "../../../public/img/languages/italy.png";
+import English from "../../../public/img/languages/english.png";
 import { useDispatch } from "react-redux";
 import { setLanguage } from "../redux/quizReducer";
 import i18n from "../../i18n";

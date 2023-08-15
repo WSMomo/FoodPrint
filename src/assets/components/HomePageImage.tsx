@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import FarmPic from "../img/farm.png";
+import FarmPic from "../../../public/img/farm.png";
 import { RootState } from "../redux/store";
 import { checkScoreResult } from "../global/utility";
 import { getResultsData, resultsSentencesType } from "../global/results";
