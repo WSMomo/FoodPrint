@@ -5,36 +5,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { restart } from "../redux/quizReducer";
 import { RootState } from "../redux/store";
 import { QUIZ_LENGTH } from "../global/data";
+import { checkScoreResult } from "../global/utility";
 
 export default function Result() {
   const score = useSelector((state: RootState) => state.quiz.score);
-  let scoreResult: string;
-  switch (score) {
-    case 0:
-      scoreResult = "initiator";
-      break;
-    case 1:
-    case 2:
-    case 3:
-      scoreResult = "starter";
-      break;
-    case 4:
-    case 5:
-    case 6:
-      scoreResult = "aware";
-      break;
-    case 7:
-    case 8:
-    case 9:
-      scoreResult = "expert";
-      break;
-    case 10:
-      scoreResult = "master";
-      break;
-    default:
-      scoreResult = "master";
-      break;
-  }
+
+  const scoreResult = checkScoreResult(score);
 
   const dispatch = useDispatch();
 
@@ -44,10 +20,15 @@ export default function Result() {
         {score}/{QUIZ_LENGTH}
       </div>
       <Separator />
-      <div className="flex flex-col text-center px-14">
+      <div className="flex flex-col justify-center items-center text-center px-14">
         <h2 className="p-4 text-3xl">
           {resultsSentences[scoreResult].sentence}
         </h2>
+        <img
+          className="w-1/6 m-4"
+          src={resultsSentences[scoreResult].image}
+          alt={resultsSentences[scoreResult].sentence}
+        />
         <p className="text-lg">{resultsSentences[scoreResult].description}</p>
       </div>
       <ActionButton handleClick={() => dispatch(restart())}>

@@ -4,7 +4,7 @@ import { QUIZ_LENGTH } from "../global/data";
 
 const progressionPercentage = 100 / QUIZ_LENGTH;
 
-export interface QuizReducerTypes {
+export type QuizReducerTypes = {
   isStarted: boolean;
   isFinished: boolean;
   index: number;
@@ -12,7 +12,9 @@ export interface QuizReducerTypes {
   answersClicked: boolean;
   score: number;
   actuallyAnswered: boolean;
-}
+  highestScore: number;
+  attempt: number;
+};
 
 const initialState: QuizReducerTypes = {
   isStarted: false,
@@ -22,6 +24,8 @@ const initialState: QuizReducerTypes = {
   answersClicked: false,
   score: 0,
   actuallyAnswered: false,
+  highestScore: 0,
+  attempt: 0,
 };
 
 export const quizSlice = createSlice({
@@ -47,7 +51,11 @@ export const quizSlice = createSlice({
       state.score = state.score + 1;
     },
     restart: (state) => {
-      return { ...initialState, score: state.score };
+      return {
+        ...initialState,
+        attempt: state.attempt,
+        highestScore: state.score,
+      };
     },
     setActuallyAnswer: (state) => {
       state.actuallyAnswered = !state.actuallyAnswered;
@@ -57,6 +65,10 @@ export const quizSlice = createSlice({
       state.progression = state.progression + progressionPercentage;
       state.actuallyAnswered = !state.actuallyAnswered;
       state.answersClicked = !state.answersClicked;
+    },
+    startQuiz: (state) => {
+      state.isStarted = true;
+      state.attempt = state.attempt + 1;
     },
   },
 });
@@ -71,6 +83,7 @@ export const {
   restart,
   setActuallyAnswer,
   nextQuestion,
+  startQuiz,
 } = quizSlice.actions;
 
 export default quizSlice.reducer;

@@ -10,6 +10,7 @@ export default function Accordion({ title, children }: Props) {
   function handleClick() {
     setIsHidden(!isHidden);
   }
+
   return (
     <div
       className={`

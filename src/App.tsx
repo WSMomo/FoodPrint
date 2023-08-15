@@ -1,7 +1,7 @@
 import { Provider } from "react-redux";
 import { store } from "./assets/redux/store";
 
-import Quiz from "./assets/scenes/Quiz";
+import Quiz from "./assets/pages/Quiz";
 
 function App() {
   return (
