@@ -2,12 +2,12 @@
   "initiator": {
     "sentence": "Initiator",
     "description": "Every journey begins with a step. Your curiosity about the impact of food on the environment is a great starting point. Keep exploring and learning!",
-    "image": "/assets/img/seed_initiator.png"
+    "image": "../../../public/img/seed_initiator.png"
   },
   "starter": {
     "sentence": "Starter",
     "description": "You're just getting started on your journey to understanding the impact of food on the environment. Keep learning and exploring!",
-    "image": "/assets/img/fruits_starter.png"
+    "image": "../../../public/img/fruits_starter.png"
   },
   "aware": {
     "sentence": "Aware",
