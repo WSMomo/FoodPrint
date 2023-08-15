@@ -1,4 +1,4 @@
-import { resultsSentences } from "../global/results";
+import { getResultsData, resultsSentencesType } from "../global/results";
 import Separator from "../components/Separator";
 import ActionButton from "../components/ActionButton";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,8 +8,14 @@ import { QUIZ_LENGTH } from "../global/data";
 import { checkScoreResult } from "../global/utility";
 import Accordion from "../components/Accordion";
 import WrongAnswers from "../components/WrongAnswers";
+import { useTranslation } from "react-i18next";
 
 export default function Result() {
+  const { t } = useTranslation();
+
+  const language = useSelector((state: RootState) => state.quiz.language);
+  const resultsSentences: resultsSentencesType = getResultsData(language);
+
   const score = useSelector((state: RootState) => state.quiz.score);
   const wrongAnswers = useSelector(
     (state: RootState) => state.quiz.wrongAnswers
@@ -17,7 +23,6 @@ export default function Result() {
   const scoreResult = checkScoreResult(score);
 
   const dispatch = useDispatch();
-  console.log(typeof wrongAnswers);
   return (
     <div className="bg-main-color text-secondary-color w-4/5 md:w-3/5 max-w-screen-md min-h-fit p-4 flex flex-col items-center">
       <div>
@@ -36,12 +41,12 @@ export default function Result() {
         <p className="text-lg">{resultsSentences[scoreResult].description}</p>
       </div>
       <ActionButton handleClick={() => dispatch(restart())}>
-        Restart
+        {t("restartButton")}
       </ActionButton>
       {wrongAnswers.length > 0 && (
         <>
           <Separator />
-          <Accordion title="See your wrong answers">
+          <Accordion title={t("wrongAnswersAccordionTitle")}>
             {wrongAnswers.map((questionNumber) => (
               <WrongAnswers
                 questionNumber={questionNumber}

@@ -1,8 +1,10 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
-import { quizData } from "../global/questions";
-
+import { getQuizData } from "../global/questions";
 export default function Question() {
+  const language = useSelector((state: RootState) => state.quiz.language);
+  const quizData = getQuizData(language);
+
   const index = useSelector((state: RootState) => state.quiz.index);
 
   return (

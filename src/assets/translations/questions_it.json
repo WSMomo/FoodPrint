@@ -1,0 +1,87 @@
+[
+  {
+    "question": "Qual è la principale fonte di emissioni di gas serra legate all'industria alimentare?",
+    "options": [
+      "Trasporto dei prodotti alimentari",
+      "Produzione di carne bovina",
+      "Uso di fertilizzanti chimici",
+      "Lavorazione degli alimenti"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Quale alimento richiede la maggiore quantità di acqua per la sua produzione?",
+    "options": ["Riso", "Pomodori", "Pollo", "Cioccolato"],
+    "answer": 0
+  },
+  {
+    "question": "Quale delle seguenti opzioni ha il minor impatto ambientale?",
+    "options": [
+      "Dieta vegetariana",
+      "Dieta a base di carne",
+      "Dieta vegana",
+      "Dieta pescetariana"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Qual è la causa principale dell'erosione del suolo nelle aree agricole?",
+    "options": [
+      "Piogge intense",
+      "Pesticidi",
+      "Sovrapascolamento",
+      "Deforestazione"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Quale tipo di pesca è considerato più sostenibile?",
+    "options": [
+      "Pesca a strascico",
+      "Pesca con lenza",
+      "Pesca con esca viva",
+      "Pesca con reti"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Qual è l'impatto dell'allevamento intensivo del bestiame sulla biodiversità?",
+    "options": [
+      "Aumento della biodiversità",
+      "Nessun impatto sulla biodiversità",
+      "Riduzione della biodiversità",
+      "Assenza di impatto sulla biodiversità"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Qual è l'opzione alimentare più efficiente in termini di risorse?",
+    "options": [
+      "Alimenti processati",
+      "Alimenti locali e di stagione",
+      "Alimenti confezionati",
+      "Alimenti esotici"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Quale pratica agricola favorisce la conservazione del suolo?",
+    "options": [
+      "Monocoltura",
+      "Rotazione delle colture",
+      "Irrigazione eccessiva",
+      "Uso di pesticidi chimici"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Quale gruppo alimentare è responsabile della maggior parte della deforestazione globale?",
+    "options": ["Frutta", "Verdure", "Carne rossa", "Frutti di mare"],
+    "answer": 2
+  },
+  {
+    "question": "Qual è l'alternativa sostenibile alla plastica per l'imballaggio alimentare?",
+    "options": ["Vetro", "Alluminio", "Carta", "Bioplastica"],
+    "answer": 3
+  }
+]

@@ -2,9 +2,11 @@ import { useSelector } from "react-redux";
 import FarmPic from "../img/farm.png";
 import { RootState } from "../redux/store";
 import { checkScoreResult } from "../global/utility";
-import { resultsSentences } from "../global/results";
-
+import { getResultsData, resultsSentencesType } from "../global/results";
 export default function HomePageImage() {
+  const language = useSelector((state: RootState) => state.quiz.language);
+  const resultsSentences: resultsSentencesType = getResultsData(language);
+
   const highestScore = useSelector(
     (state: RootState) => state.quiz.highestScore
   );

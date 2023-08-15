@@ -5,6 +5,8 @@ import { QUIZ_LENGTH } from "../global/data";
 const progressionPercentage = 100 / QUIZ_LENGTH;
 
 export type QuizReducerTypes = {
+  language: string;
+  languagesSelected: boolean;
   isStarted: boolean;
   isFinished: boolean;
   index: number;
@@ -19,6 +21,8 @@ export type QuizReducerTypes = {
 };
 
 const initialState: QuizReducerTypes = {
+  language: "en",
+  languagesSelected: true,
   isStarted: false,
   isFinished: false,
   index: 0,
@@ -36,6 +40,10 @@ export const quizSlice = createSlice({
   name: "quiz",
   initialState,
   reducers: {
+    setLanguage: (state, action: PayloadAction<string>) => {
+      state.language = action.payload;
+      state.languagesSelected = true;
+    },
     setIsStarted: (state, action: PayloadAction<boolean>) => {
       state.isStarted = action.payload;
     },
@@ -65,6 +73,8 @@ export const quizSlice = createSlice({
         ...initialState,
         attempt: state.attempt,
         highestScore: state.score,
+        languagesSelected: state.languagesSelected,
+        language: state.language,
       };
     },
     nextQuestion: (state) => {
@@ -90,6 +100,7 @@ export const quizSlice = createSlice({
 });
 
 export const {
+  setLanguage,
   setIsStarted,
   setIsFinished,
   setIndex,

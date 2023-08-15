@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import Answer from "./Answer";
 import { RootState } from "../redux/store";
-import { quizData } from "../global/questions";
+import { getQuizData } from "../global/questions";
 import {
   setCurrentCorrectAnswer,
   setCurrentUserAnswer,
@@ -11,6 +11,9 @@ import {
 export default function Answers() {
   const dispatch = useDispatch();
   const index = useSelector((state: RootState) => state.quiz.index);
+
+  const language = useSelector((state: RootState) => state.quiz.language);
+  const quizData = getQuizData(language);
 
   useEffect(() => {
     dispatch(setCurrentCorrectAnswer(quizData[index].answer));

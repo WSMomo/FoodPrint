@@ -1,9 +1,11 @@
-import { quizData } from "../global/questions";
+import { getQuizData } from "../global/questions";
 import Separator from "./Separator";
 
 type Props = {
   questionNumber: number;
 };
+
+const quizData = getQuizData("en");
 
 export default function WrongAnswers({ questionNumber }: Props) {
   const question = quizData[questionNumber].question;

@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { startQuiz } from "../redux/quizReducer";
 import { RootState } from "../redux/store";
+import { useTranslation } from "react-i18next";
 
-import { resultsSentences } from "../global/results";
 import { checkScoreResult } from "../global/utility";
 import { QUIZ_LENGTH } from "../global/data";
 
@@ -10,8 +10,12 @@ import ActionButton from "./ActionButton";
 import Accordion from "./Accordion";
 import HomePageImage from "./HomePageImage";
 import Separator from "./Separator";
+import { getResultsData, resultsSentencesType } from "../global/results";
 
 export default function Hero() {
+  const { t } = useTranslation();
+  const language = useSelector((state: RootState) => state.quiz.language);
+  const resultsSentences: resultsSentencesType = getResultsData(language);
   const dispatch = useDispatch();
 
   const highestScore = useSelector(
@@ -25,7 +29,7 @@ export default function Hero() {
 
   return (
     <>
-      <h1 className="text-3xl">FoodPrint: The Sustainability Quiz </h1>
+      <h1 className="text-3xl">{t("title")}</h1>
       <HomePageImage />
       {attempt > 0 ? (
         <Accordion title={titleByScore}>
@@ -38,16 +42,10 @@ export default function Hero() {
         ""
       )}
       <Separator />
-      <p>
-        This quiz will help you learn more about food and its impact on the
-        environment and people.
-      </p>
-      <p className="m-4">
-        To get started, click the <span className="font-semibold">"Start"</span>{" "}
-        button.
-      </p>
+      <p>{t("intro")}</p>
+      <p className="m-4">{t("getStarted")}</p>
       <ActionButton handleClick={() => dispatch(startQuiz())}>
-        Learn More About Food
+        {t("startButton")}
       </ActionButton>
     </>
   );
