@@ -1,7 +1,7 @@
 {
   "title": "FoodPrint: The Sustainability Quiz",
   "intro": "This quiz will help you learn more about food and its impact on the environment and people.",
-  "getStarted": "To get started, click the \"Start\" button.",
+  "getStarted": "To get started, click the following button.",
   "startButton": "Learn More About Food",
   "howAccordionTitle": "How does the quiz work?",
   "howAccordionDescription": "The quiz is made up of a series of multiple-choice questions. For each question, choose the option you think is correct. At the end of the quiz, you will receive a score. Your score will be used to determine your level of food knowledge.",
@@ -12,5 +12,6 @@
   "restartButton": "Restart",
   "wrongAnswersAccordionTitle": "See your wrong answers",
   "nextQuestionButton": "NEXT",
-  "showResultsButton": "END"
+  "showResultsButton": "END",
+  "correctAnswer": "Correct Answer:"
 }

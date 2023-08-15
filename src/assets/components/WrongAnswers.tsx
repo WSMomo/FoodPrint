@@ -1,13 +1,17 @@
+import { useSelector } from "react-redux";
 import { getQuizData } from "../global/questions";
 import Separator from "./Separator";
+import { RootState } from "../redux/store";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   questionNumber: number;
 };
 
-const quizData = getQuizData("en");
-
 export default function WrongAnswers({ questionNumber }: Props) {
+  const { t } = useTranslation();
+  const language = useSelector((state: RootState) => state.quiz.language);
+  const quizData = getQuizData(language);
   const question = quizData[questionNumber].question;
   const answers = quizData[questionNumber].options;
   const correctAnswerIndex = quizData[questionNumber].answer;
@@ -19,7 +23,7 @@ export default function WrongAnswers({ questionNumber }: Props) {
       <li>
         <div>{question}</div>
         <div className="m-2">
-          Correct answer:
+          {t("correctAnswer")}
           <span className="font-semibold"> {correctAnswer}</span>
         </div>
       </li>

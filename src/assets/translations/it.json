@@ -1,7 +1,7 @@
 {
   "title": "FoodPrint: Il Quiz sulla Sostenibilità Alimentare",
   "intro": "Questo quiz ti aiuterà a conoscere meglio il cibo e il suo impatto sull'ambiente e sulle persone.",
-  "getStarted": "Per iniziare, clicca sul pulsante \"Inizia\".",
+  "getStarted": "Per iniziare, clicca sul pulsante qui sotto.",
   "startButton": "Scopri Di Più Sul Cibo",
   "howAccordionTitle": "Come funziona il quiz?",
   "howAccordionDescription": "Il quiz è composto da una serie di domande a risposta multipla. Per ogni domanda, scegli l'opzione che ritieni corretta. Alla fine del quiz, riceverai un punteggio. Il tuo punteggio verrà utilizzato per determinare il tuo livello di conoscenza alimentare.",
@@ -12,5 +12,6 @@
   "restartButton": "Riprova",
   "wrongAnswersAccordionTitle": "Guarda le tue risposte sbagliate",
   "nextQuestionButton": "AVANTI",
-  "showResultsButton": "FINE"
+  "showResultsButton": "FINE",
+  "correctAnswer": "Risposta corretta:"
 }
